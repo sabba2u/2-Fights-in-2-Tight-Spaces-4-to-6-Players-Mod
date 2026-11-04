@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>FourPlayers</AssemblyName>
+    <RootNamespace>FourPlayers</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <!-- Your game folder (override: dotnet build -p:GameDir="...") -->
+    <GameDir Condition="'$(GameDir)' == ''">K:\__games\steamapps\common\2 Fights in 2 Tight Spaces</GameDir>
+    <Core>$(GameDir)\BepInEx\core</Core>
+    <Interop>$(GameDir)\BepInEx\interop</Interop>
+  </PropertyGroup>
+
+  <!-- No Harmony: hooking game methods crashed CoreCLR while hosting (see NOTES.md). Everything runs from Driver.Update. -->
+  <ItemGroup>
+    <Reference Include="$(Core)\BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(Core)\BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(Core)\Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(Core)\Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="$(Interop)\Il2Cppmscorlib.dll" Private="false" />
+    <Reference Include="$(Interop)\Il2CppSystem.dll" Private="false" />
+    <Reference Include="$(Interop)\Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(Interop)\Coherence.Common.dll" Private="false" />
+    <Reference Include="$(Interop)\Coherence.Runtime.dll" Private="false" />
+    <Reference Include="$(Interop)\Coherence.Toolkit.dll" Private="false" />
+    <Reference Include="$(Interop)\Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(Interop)\UnityEngine.dll" Private="false" />
+    <Reference Include="$(Interop)\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(Interop)\UnityEngine.UI.dll" Private="false" />
+    <Reference Include="$(Interop)\UnityEngine.UIModule.dll" Private="false" />
+    <Reference Include="$(Interop)\UnityEngine.ScreenCaptureModule.dll" Private="false" />
+    <Reference Include="$(Interop)\UnityEngine.ImageConversionModule.dll" Private="false" />
+  </ItemGroup>
+
+  <Target Name="Deploy" AfterTargets="Build">
+    <!-- The installed game locks the DLL while it runs: warn instead of failing (test copies take it from bin\). -->
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins" Retries="0" ContinueOnError="WarnAndContinue" />
+  </Target>
+
+</Project>

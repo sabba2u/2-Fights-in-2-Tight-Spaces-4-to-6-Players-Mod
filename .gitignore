@@ -1,0 +1,12 @@
+# Whitelist: only the mod's source, the release builder and docs are published.
+# (Game dumps, decompiled code, notes, logs and local test tools stay local.)
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/plugin/
+/plugin/*
+!/plugin/FourPlayers/
+/plugin/FourPlayers/bin/
+/plugin/FourPlayers/obj/
+!/release/

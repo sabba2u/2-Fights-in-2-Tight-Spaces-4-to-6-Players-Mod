@@ -1,0 +1,23 @@
+2 Fights in 2 Tight Spaces - 4 to 6 Players Mod
+===============================================
+
+EVERYONE in the lobby needs this mod installed (host and every guest).
+
+INSTALL
+1. In Steam: right-click "2 Fights in 2 Tight Spaces" > Manage > Browse local files.
+   A folder opens that contains 2FightsIn2TightSpaces.exe.
+2. Copy EVERYTHING from this zip into that folder (next to 2FightsIn2TightSpaces.exe).
+   If Windows asks, choose "Replace".
+3. Start the game from Steam as usual.
+   The FIRST start takes 1-3 minutes on a black screen while the mod sets itself up. That's normal. Later starts are fast.
+
+PLAY
+Multiplayer > Host as usual. Up to 6 players can now join.
+
+UNINSTALL
+Delete these from the game folder: winhttp.dll, doorstop_config.ini, the BepInEx folder and the dotnet folder.
+(Or in Steam: Properties > Installed Files > Verify integrity of game files, then delete the same items.)
+
+PROBLEMS?
+Send the file BepInEx\LogOutput.log from the game folder.
+More info: https://github.com/sabba2u/2-Fights-in-2-Tight-Spaces-4-to-6-Players-Mod
