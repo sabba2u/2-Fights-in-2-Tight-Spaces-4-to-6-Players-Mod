@@ -13,13 +13,13 @@ namespace FourPlayers;
 /// Append colours until there are MaxPlayers entries. Checked every frame, so it re-applies after a reload.
 internal static class Palette
 {
+    private static readonly string[] DefaultExtra = { "#3FBF59", "#3F8FFF", "#F2D33F", "#E04FB0", "#3FD9D9" };
     private static bool _loggedWaiting;
     private static Sprite[] _sprites; // created once, reused when the palette is re-extended
 
     internal static void Ensure()
     {
-        var sys = PersistentSystem<ColourPaletteLoadSystem>.Instance;
-        if (sys == null) return;
+        var sys = PersistentSystem<ColourPaletteLoadSystem>.Instance;        if (sys == null) return;
         var icons = sys._availableIcons;
         int want = Plugin.MaxPlayers.Value;
         if (icons == null || icons.Length == 0)
@@ -36,7 +36,8 @@ internal static class Palette
         {
             int k = i - icons.Length;
             var d = new PlayerIconData();
-            d._colour = ParseColour(extra.Length > 0 ? extra[k % extra.Length] : "#3FBF59");
+            // Short lists (e.g. an old config with one colour) fall back to the defaults, so players never share a colour.
+            d._colour = ParseColour(k < extra.Length ? extra[k] : DefaultExtra[k % DefaultExtra.Length]);
             _sprites ??= new Sprite[8];
             if (_sprites[k] == null) _sprites[k] = IconShapes.Create(k, icons[0]._sprite);
             d._sprite = _sprites[k];

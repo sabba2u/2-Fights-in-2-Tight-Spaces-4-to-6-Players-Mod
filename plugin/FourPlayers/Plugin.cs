@@ -34,7 +34,7 @@ public class Plugin : BasePlugin
             "The game caps itself at 60 fps (only applies with VSync off). 0 = leave the game's cap, -1 = match the " +
             "monitor's refresh rate, any other number = that cap.");
         MaxPlayers = Config.Bind("General", "MaxPlayers", 6,
-            "Players supported by the UI fixes. The network cap itself comes from patcher/patch_players.py.");
+            "Maximum players per lobby (1-16). Everyone in the lobby should use the same value.");
         ExtraColours = Config.Bind("General", "ExtraPlayerColours", "#3FBF59,#3F8FFF,#F2D33F,#E04FB0,#3FD9D9",
             "Colours (hex, comma-separated) for players beyond the game's 3 (red, orange, purple). Player 4 first.");
 

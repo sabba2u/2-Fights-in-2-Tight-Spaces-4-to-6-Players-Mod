@@ -10,6 +10,9 @@ INSTALL
    If Windows asks, choose "Replace".
 3. Start the game from Steam as usual.
    The FIRST start takes 1-3 minutes on a black screen while the mod sets itself up. That's normal. Later starts are fast.
+4. Check it's working: a black text window (BepInEx console) opens next to the game. Near the top it should say
+   "CapPatch: build ...: player cap 6". No window = the files went into the wrong folder.
+   Leave that window open: closing it also closes the game.
 
 PLAY
 Multiplayer > Host as usual. Up to 6 players can now join.

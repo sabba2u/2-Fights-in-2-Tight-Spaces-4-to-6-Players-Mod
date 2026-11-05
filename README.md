@@ -2,6 +2,8 @@
 
 Play **2 Fights in 2 Tight Spaces** multiplayer with up to **6 players** instead of 3.
 
+▶ **Video:** https://www.youtube.com/watch?v=Z3-gVVMSbok
+
 > Fan-made mod. Not affiliated with or endorsed by Ground Shatter. Use at your own risk; it's easy to remove (see below).
 
 ## Install (2 minutes)
@@ -16,6 +18,10 @@ Play **2 Fights in 2 Tight Spaces** multiplayer with up to **6 players** instead
 4. Start the game from Steam as usual.
 
 **The first start takes 1–3 minutes** (black screen or splash) while the mod sets itself up. That's normal and only happens once.
+
+**How to tell it's working:** a black text window (the BepInEx console) opens next to the game. Near the top it should say
+`CapPatch: build ...: player cap 6`. If that window doesn't appear, the files went into the wrong folder.
+Leave the window open: closing it also closes the game.
 
 Everything you need is in the zip: the mod plus the exact mod loader version it needs ([BepInEx](https://github.com/BepInEx/BepInEx) 6.0.0-be.791). You don't need to download anything else or edit any files.
 

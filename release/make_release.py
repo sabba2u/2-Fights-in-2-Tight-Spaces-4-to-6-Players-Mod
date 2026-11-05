@@ -16,13 +16,14 @@ PLUGIN_DLL = PLUGIN_DIR / "bin" / "Release" / "net6.0" / "FourPlayers.dll"
 HERE = Path(__file__).resolve().parent
 DIST = ROOT / "dist"
 
-# BepInEx shows a console window by default; players don't need it (the log still goes to BepInEx\LogOutput.log).
+# Keep BepInEx's console window on: it opens next to the game, so players can see at a glance that the mod loaded
+# (and the "CapPatch: ... player cap 6" line). The log also goes to BepInEx\LogOutput.log.
 BEPINEX_CFG = """[Logging.Console]
 
 ## Enables showing a console for log output.
 # Setting type: Boolean
 # Default value: true
-Enabled = false
+Enabled = true
 """
 
 
