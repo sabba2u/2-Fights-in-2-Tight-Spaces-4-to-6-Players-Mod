@@ -27,6 +27,7 @@
     <Reference Include="$(Interop)\Coherence.Runtime.dll" Private="false" />
     <Reference Include="$(Interop)\Coherence.Toolkit.dll" Private="false" />
     <Reference Include="$(Interop)\Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(Interop)\Facepunch.Steamworks.Win64.dll" Private="false" />
     <Reference Include="$(Interop)\UnityEngine.dll" Private="false" />
     <Reference Include="$(Interop)\UnityEngine.CoreModule.dll" Private="false" />
     <Reference Include="$(Interop)\UnityEngine.UI.dll" Private="false" />

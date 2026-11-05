@@ -28,7 +28,7 @@ Enabled = true
 
 
 def version():
-    m = re.search(r'BepInPlugin\(Guid, "[^"]+", "([^"]+)"\)', (PLUGIN_DIR / "Plugin.cs").read_text("utf-8"))
+    m = re.search(r'const string Version = "([^"]+)"', (PLUGIN_DIR / "Plugin.cs").read_text("utf-8"))
     if not m:
         raise SystemExit("version not found in Plugin.cs")
     return m.group(1)

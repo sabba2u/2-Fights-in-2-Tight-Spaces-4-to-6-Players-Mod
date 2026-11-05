@@ -33,6 +33,8 @@ internal static class CapPatch
     };
 
     internal static string Status = "not run";
+    /// The player cap actually in effect (3 = the game's own, i.e. the patch didn't apply).
+    internal static int Cap = 3;
 
     internal static void Apply(int players)
     {
@@ -65,6 +67,7 @@ internal static class CapPatch
             // The static constructor may already have run with the old value: set the field too.
             try { KITS.Session.SessionSetupSystem.SessionSetupData.MaxPlayers = players; }
             catch (Exception e) { Plugin.Log.LogWarning($"CapPatch: SessionSetupData.MaxPlayers: {e.Message}"); }
+            Cap = players;
             Status = $"build {label}: player cap {players}";
             Plugin.Log.LogInfo("CapPatch: " + Status);
             return;

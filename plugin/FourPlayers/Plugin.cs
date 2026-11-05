@@ -7,10 +7,11 @@ using Il2CppInterop.Runtime.Injection;
 
 namespace FourPlayers;
 
-[BepInPlugin(Guid, "Four Players", "0.3.0")]
+[BepInPlugin(Guid, "Four Players", Version)]
 public class Plugin : BasePlugin
 {
     public const string Guid = "fits2.fourplayers";
+    public const string Version = "0.3.1";
 
     internal static ManualLogSource Log;
     internal static ConfigEntry<int> MaxPlayers, FrameRateCap;

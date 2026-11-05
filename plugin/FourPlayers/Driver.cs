@@ -54,6 +54,7 @@ public class Driver : MonoBehaviour
             Guard("window", WindowLayout.Tick);
             Guard("indexwatchdog", IndexWatchdog.Tick);
             Guard("publishroom", Rooms.PublishIfHosting);
+            Guard("modcheck", ModCheck.Tick);
         }
     }
 
@@ -257,6 +258,8 @@ public class Driver : MonoBehaviour
                 Plugin.Log.LogInfo("endturn: voted");
                 break;
             case "perf": Perf(rest.ToLowerInvariant()); break;
+            case "modcheck": ModCheck.Report(); break;
+            case "banner": ModCheck.TestText = rest.Length > 0 ? rest.Replace("\\n", "\n") : null; break;   // "banner" alone clears
             case "loadkick":
             {
                 // Re-run the loading screen's own "player game actions changed" check (waits on PlayerActionsEnded).

@@ -44,6 +44,10 @@ Host a multiplayer game as usual (**Multiplayer › Host**). Up to 6 players can
 - Fixes a player-number mix-up: two players could end up with the same colour when joining at the same time.
 - Fixes a bug from the original game: when a teammate played a card, the card you had picked (but not played yet) got deselected. The mod now selects it again.
 - Fixes Endless mode sometimes freezing on the loading screen after a fight's rewards.
+- **Warns when someone's mod isn't working.** In a Steam lobby, a red banner at the top of the screen names any player
+  who doesn't have the mod running, or whose player cap didn't turn on. If your own cap didn't turn on, you see that too.
+  This matters because with more than 3 players, anyone without a working mod gets stuck in the first fight: no cards
+  and "-1/-1" at the top. That freezes the fight for everyone.
 
 ## Settings (optional)
 
